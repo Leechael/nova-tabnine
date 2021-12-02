@@ -39,7 +39,7 @@ class TabNineService {
     if (binaryPath) {
       this.process = new Process(binaryPath, {
         stdio: 'pipe',
-        args: ["--client=nova"],
+        args: ["--client=nova", "--no-lsp=true"],
       })
       this.reader = this.process.onStdout(this.onStdout, this)
       this.writer = this.process.stdin.getWriter()
